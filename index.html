@@ -5,17 +5,31 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Metai – Kristijono Donelaičio poema</title> 
 <style>
-  body { font-family: Georgia, serif; margin: 0; line-height: 1.6; color: #222; background: #e5decf; }
-  nav { padding: 12px 20px; background: #eee; }
-  nav a { color: #222; }
-  header { background: #3f7d3a; color: white; padding: 40px 20px; text-align: center; }
-  header h1 { margin: 0; font-size: 2.5em; }
+  header { background-image: url(pieva.jpg);min-height: 300px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 70px 20px;
+  background-position: center bottom;
+  color: #ffffff;}
+  body { font-family: Georgia, serif; margin: 0; line-height: 1.6; color: #000000; background: #f6f4ebed; }
+  nav { padding: 12px 20px; background: #f6f4ebed; }
+  nav a { underline: none; color: #000000; }
+  h1 {color: #ffffff; font-size: 5em; margin: 0; }
+  header h2 { margin: 0; font-size: 2.5em; }
   main { max-width: 700px; margin: 0 auto; padding: 20px; }
   .lead { font-size: 1.2em; }
+  .p1 {color:#ffffff; font-size: 1.2em; }
   blockquote { border-left: 4px solid #3f7d3a; margin-left: 0; padding-left: 15px; font-style: italic; }
   .pn { display: flex; justify-content: space-between; margin-top: 30px; }
-  .seasons a { display: block; padding: 18px; margin-bottom: 10px; color: white; text-decoration: none; font-size: 1.3em; }
-  footer { padding: 20px; background: #eee; font-size: 0.9em; }
+  .seasons a { display: block; padding: 18px; margin-bottom: 10px; color: white; text-decoration: none; font-size: 1.3em; border-radius: 20px }
+  footer { padding: 20px; background: #ddd; font-size: 0.9em; }
+  .zalias-blokas {
+  background: #315842;   
+  color: white;          
+  padding: 27px;     
+  border-radius: 20px;   
+}
 </style>
 </head>
 <body>
@@ -23,20 +37,24 @@
 <nav><a href="index.html">Pradžia</a> | <a href="pavasaris.html">Pavasaris</a> | <a href="vasara.html">Vasara</a> | <a href="ruduo.html">Ruduo</a> | <a href="ziema.html">Žiema</a> | <a href="autorius.html">Autorius</a></nav>
 
 <header>
-<h1>Metai</h1>
-<p>Kristijono Donelaičio poema apie keturis metų laikus</p>
+<h1>„Metų“ išmintis</h1>
+<p class="p1">Keturios metų dalys, viena gyvenimo kelionė. Ar Donelaičio išmintis vis dar gali ko nors išmokyti šiuolaikinį žmogų?</p>
 </header>
 
 <main>
-<p class="lead">Pasirink metų laiką ir sek poeto žvilgsnį nuo pavasario sėjos iki žiemos šalčių.</p>
+
+<p>Pasirink metų laiką ir sek poeto žvilgsnį nuo pavasario sėjos iki žiemos šalčių.</p>
+
 <div class="seasons">
 <a href="pavasaris.html" style="background:#3f7d3a; color:white">Pavasaris<br><small><i>Pavasario linksmybės</i></small></a>
 <a href="vasara.html" style="background:#e0a526; color:#231a05">Vasara<br><small><i>Vasaros darbai</i></small></a>
 <a href="ruduo.html" style="background:#a8472b; color:white">Ruduo<br><small><i>Rudenio gėrybės</i></small></a>
 <a href="ziema.html" style="background:#456f94; color:white">Žiema<br><small><i>Žiemos rūpesčiai</i></small></a>
 </div>
+<div class="zalias-blokas">
 <h2>Apie poemą</h2>
 <p>„Metai“ yra XVIII a. poema, parašyta hegzametru ir sudaryta iš keturių dalių, po vieną kiekvienam metų laikui. Maždaug 1765–1775 m. ją sukūrė kunigas ir poetas Kristijonas Donelaitis. Išspausdinta ji tik 1818 m., po 38 metų nuo autoriaus mirties. Poema laikoma lietuvių literatūros klasikos pradžia, o jos kalba yra svarbus senosios lietuvių rašto kalbos paminklas.</p>
+</div>
 <h2>Veikėjai</h2>
 <p>Daugelio veikėjų vardai atskleidžia jų būdą.</p>
 <ul>
@@ -44,6 +62,7 @@
 <li><strong>Slunkius</strong> yra tinginys, vengiantis darbo.</li>
 <li><strong>Dosnus</strong> yra svetingas, dosnus kaimynas.</li>
 </ul>
+<div class="zalias-blokas">
 <h2>Temos</h2>
 <ul>
 <li><strong>Darbas ir darbštumas:</strong> pagrindinė gero gyvenimo sąlyga.</li>
@@ -52,9 +71,10 @@
 <li><strong>Moralė:</strong> sąžiningumas, saikas, dosnumas.</li>
 <li><strong>Gimtoji kalba ir papročiai:</strong> poetas ragina jų nepamiršti.</li>
 </ul>
+</div>
 </main>
 
-<footer>Mokyklinis projektas pagal Kristijono Donelaičio poemą „Metai“. Parengė: [vardas, pavardė], [klasė].</footer>
+<footer>Mokyklinis projektas pagal Kristijono Donelaičio poemą „Metai“. Parengė: Edvinas Pocius ir Eimantas Jucius, 3e klasė.</footer>
 
 </body>
 </html>
