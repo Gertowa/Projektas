@@ -1,49 +1,485 @@
+
 <!DOCTYPE html>
 <html lang="lt">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kristijonas Donelaitis – Metai</title>
+
 <style>
-  body { font-family: Georgia, serif; margin: 0; line-height: 1.6; color: #222; background: #f6f1e7; }
-  nav { padding: 12px 20px; background: #eee; }
-  nav a { color: #222; }
-  header { background: #3f7d3a; color: white; padding: 40px 20px; text-align: center; }
-  header h1 { margin: 0; font-size: 2.5em; }
-  main { max-width: 700px; margin: 0 auto; padding: 20px; }
-  .lead { font-size: 1.2em; }
-  blockquote { border-left: 4px solid #3f7d3a; margin-left: 0; padding-left: 15px; font-style: italic; }
-  .pn { display: flex; justify-content: space-between; margin-top: 30px; }
-  .seasons a { display: block; padding: 18px; margin-bottom: 10px; color: white; text-decoration: none; font-size: 1.3em; }
-  footer { padding: 20px; background: #eee; font-size: 0.9em; }
+  body {
+    font-family: Georgia, serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #222;
+    background: #f6f4ebed;
+  }
+
+  nav {
+    padding: 12px 20px;
+    background: #eee;
+  }
+
+  nav a {
+    color: #222;
+  }
+
+  header {
+    background-image: url("miskas.jpg"); /* Be jokios žalios auros */
+    min-height: 360px;
+    display: grid;
+    place-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 50px 20px;
+    color: #ffffff;
+  }
+
+  header h1 {
+    margin: 0;
+    /* Telefone bus ~42px, o kompiuteryje išaugs iki ~105px – niekada neišlįs už kraštų */
+    font-size: clamp(2.6rem, 8vw, 6.5rem); 
+    line-height: 1.05;
+    color: #fffdf7;
+    text-shadow: 
+      -1px -1px 0 #000000,  
+       1px -1px 0 #000000,
+      -1px  1px 0 #000000,
+       1px  1px 0 #000000,
+       0px  4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .p1 {
+    margin-top: 12px;
+    /* Telefone bus ~18px, kompiuteryje ~32px */
+    font-size: clamp(1.1rem, 3vw, 2rem); 
+    color: #fffdf7;
+    text-shadow: 
+      -1px -1px 0 #000000,  
+       1px -1px 0 #000000,
+      -1px  1px 0 #000000,
+       1px  1px 0 #000000,
+       0px  4px 12px rgba(0, 0, 0, 0.5);
+  }
+  .autoriaus-foto {
+    float: right;
+    width: 240px;
+    margin: 5px 0 20px 25px;
+    border-radius: 16px;
+    border: 3px solid #3f7d3a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    display: block;
+  }
+
+  @media (max-width: 600px) {
+    .autoriaus-foto {
+      float: none;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto 20px auto;
+    }
+    header h1 {
+      font-size: 3.2em;
+    }
+    .p1 {
+      font-size: 1.4em;
+    }
+  }
+  
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .lead {
+    font-size: 1.2em;
+  }
+
+  h2 {
+    margin-top: 35px;
+    color: #315f2d;
+  }
+
+  h3 {
+    color: #3f7d3a;
+    margin-bottom: 5px;
+  }
+
+  blockquote {
+    border-left: 4px solid #3f7d3a;
+    margin-left: 0;
+    padding-left: 15px;
+    font-style: italic;
+  }
+
+  .timeline {
+    border-left: 3px solid #3f7d3a;
+    margin-left: 10px;
+    padding-left: 25px;
+  }
+
+  .timeline-item {
+    margin-bottom: 25px;
+    position: relative;
+  }
+
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 7px;
+    width: 13px;
+    height: 13px;
+    background: #3f7d3a;
+    border-radius: 50%;
+  }
+
+  .timeline-date {
+    font-weight: bold;
+    color: #3f7d3a;
+    font-size: 1.1em;
+  }
+
+  .timeline-item p {
+    margin-top: 5px;
+  }
+
+  footer {
+    padding: 20px;
+    background: #eee;
+    font-size: 0.9em;
+  }
+  .tamsiaizalias-blokas {
+  background: #3f7d3a;   
+  color: white;          
+  padding: 2px;     
+  border-radius: 20px;   
+}
 </style>
 </head>
+
 <body>
 
-<nav><a href="index.html">Pradžia</a> | <a href="pavasaris.html">Pavasaris</a> | <a href="vasara.html">Vasara</a> | <a href="ruduo.html">Ruduo</a> | <a href="ziema.html">Žiema</a> | <a href="autorius.html">Autorius</a></nav>
+<nav>
+<a href="index.html">Pradžia</a> |
+<a href="pavasaris.html">Pavasaris</a> |
+<a href="vasara.html">Vasara</a> |
+<a href="ruduo.html">Ruduo</a> |
+<a href="ziema.html">Žiema</a> |
+<a href="autorius.html">Autorius</a>
+</nav>
 
 <header>
+  
 <h1>Kristijonas Donelaitis</h1>
-<p>1714–1780, kunigas ir poetas</p>
+
+<p class="p1">1714–1780, kunigas ir poetas</p>
+  
 </header>
 
 <main>
-<p class="lead">Donelaitis visą gyvenimą praleido Mažojoje Lietuvoje, o daugiau nei trisdešimt metų buvo Tolminkiemio kunigas.</p>
-<p>Be „Metų“ jis rašė ir pasakėčias, domėjosi gamta ir muzika. Dėl šios aplinkos poemoje taip tiksliai pavaizduotas kaimo gyvenimas ir metų laikų kaita.</p>
-<h2>Gyvenimo etapai</h2>
-<dl>
-<dt>1714 m.</dt><dd>Gimė Lazdynėliuose (vok. Lasdinehlen) Mažojoje Lietuvoje.</dd>
-<dt>1736–1740 m.</dt><dd>Studijavo Karaliaučiaus universitete.</dd>
-<dt>1740–1743 m.</dt><dd>Dirbo mokytoju Stalupėnuose.</dd>
-<dt>1743 m.</dt><dd>Tapo Tolminkiemio evangelikų liuteronų parapijos kunigu ir juo išliko iki mirties.</dd>
-<dt>apie 1765–1775 m.</dt><dd>Rašė poemą „Metai“.</dd>
-<dt>1780 m.</dt><dd>Mirė Tolminkiemyje.</dd>
-<dt>1818 m.</dt><dd>Liudvikas Rėza išleido „Metus“.</dd>
-</dl>
-<p>Dabar Tolminkiemis (rus. Čistyje Prudy) yra Kaliningrado srityje.</p>
+<img src="donelaitis.png" alt="Kristijonas Donelaitis" class="autoriaus-foto">
+
+<p class="lead">
+Kristijonas Donelaitis – vienas svarbiausių lietuvių literatūros pradininkų. Jis buvo poetas ir evangelikų liuteronų kunigas, didžiąją savo gyvenimo dalį praleidęs Mažojoje Lietuvoje.
+</p>
+
+<h2>Apie autorių</h2>
+
+<p>
+Kristijonas Donelaitis gimė 1714 m. sausio 1 d. Lazdynėlių kaime, netoli Gumbinės, Mažojoje Lietuvoje. Jis augo laisvųjų valstiečių šeimoje. Nuo jaunystės domėjosi mokslu ir siekė išsilavinimo. Vėliau išvyko mokytis į Karaliaučių, kur lankė mokyklą ir studijavo universitete.
+</p>
+
+<p>
+Baigęs studijas, Donelaitis dirbo mokytoju Stalupėnuose, o 1743 m. tapo Tolminkiemio evangelikų liuteronų parapijos kunigu. Šioje vietovėje jis praleido daugiau nei trisdešimt metų. Kunigo darbas leido gerai pažinti vietos žmones, jų kasdienybę, rūpesčius, papročius ir gyvenimo sąlygas.
+</p>
+
+<p>
+Donelaitis buvo įvairiapusė asmenybė. Jis domėjosi ne tik literatūra, bet ir muzika, gamta bei technika. Mokėjo kelias kalbas, grojo įvairiais instrumentais ir net gamino muzikos instrumentus. Jo pomėgiai ir atidus aplinkos stebėjimas atsispindi ir kūryboje.
+</p>
+
+<h2>Žymiausias kūrinys – „Metai“</h2>
+
+<p>
+Svarbiausias Kristijono Donelaičio kūrinys yra poema „Metai“. Joje vaizduojamas XVIII a. Mažosios Lietuvos valstiečių gyvenimas, jų kasdieniai darbai, džiaugsmai, sunkumai ir santykis su gamta. Autorius daug dėmesio skiria paprastų žmonių gyvenimui ir jų elgesiui.
+</p>
+
+<p>
+Poema suskirstyta į keturias dalis pagal metų laikus: „Pavasario linksmybės“, „Vasaros darbai“, „Rudenio gėrybės“ ir „Žiemos rūpesčiai“. Kiekviena dalis atskleidžia skirtingus gamtos pokyčius ir žmonių gyvenimo išbandymus.
+</p>
+
+<p>
+Kūrinyje Donelaitis pabrėžia darbštumo, sąžiningumo, atsakomybės, kuklumo ir pagarbos tradicijoms svarbą. Jis kritikuoja tinginystę, godumą ir nepagarbų elgesį. Šias mintis perteikia per veikėjus, jų poelgius ir kasdienius pokalbius.
+</p>
+
+<p>
+Vienas iš išskirtinių kūrinio bruožų yra hegzametras – antikinėje literatūroje naudotas eiliavimo būdas. Donelaitis jį pritaikė lietuvių kalbai, todėl „Metai“ tapo išskirtiniu kūriniu ne tik dėl savo turinio, bet ir dėl literatūrinės formos.
+</p>
+
+<h2>Kitos kūrybos sritys</h2>
+
+<p>
+Be poemos „Metai“, Donelaitis kūrė ir pasakėčias. Jose dažnai vaizduojami gyvūnai, kurių elgesys primena žmonių savybes. Pasakėčiomis autorius siekė pamokyti skaitytojus, parodyti netinkamo elgesio pasekmes ir paskatinti susimąstyti apie žmogaus vertybes.
+</p>
+
+<p>
+Nors didžiausią pripažinimą pelnė poema „Metai“, jo pasakėčios taip pat yra svarbi lietuvių literatūros dalis.
+</p>
+
+<h2>Kristijono Donelaičio gyvenimo laiko juosta</h2>
+
+<p>
+Svarbiausi autoriaus gyvenimo, mokslų, darbo ir kūrybos įvykiai.
+</p>
+
+
+<div class="timeline">
+
+  <div class="timeline-item">
+    <span class="timeline-date">1714 m. sausio 1 d.</span>
+    <h3>Gimimas Lazdynėliuose</h3>
+    <p>
+      Kristijonas Donelaitis gimė Lazdynėlių kaime, netoli Gumbinės,
+      Mažojoje Lietuvoje. Jo tėvai buvo laisvieji valstiečiai.
+      Šeima vertėsi žemės ūkiu, todėl Donelaitis nuo mažens matė
+      paprastų kaimo žmonių gyvenimą ir jų kasdienius darbus.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1720 m.</span>
+    <h3>Tėvo mirtis</h3>
+    <p>
+      Kai Kristijonui buvo vos šešeri metai, mirė jo tėvas.
+      Motina liko viena rūpintis didele šeima – keturiais sūnumis
+      ir trimis dukterimis. Nepaisant sunkių aplinkybių, vaikai
+      buvo skatinami mokytis ir siekti geresnio gyvenimo.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1732–1736 m.</span>
+    <h3>Mokslai Karaliaučiaus katedros mokykloje</h3>
+    <p>
+      Donelaitis mokėsi Karaliaučiaus katedros mokykloje.
+      Ten buvo mokoma lotynų, graikų ir kitų kalbų, taip pat
+      literatūros bei kitų mokslų. Mokydamasis jis gyveno
+      neturtingiems mokiniams skirtame bendrabutyje. Norėdamas
+      gauti išlaikymą, turėjo giedoti bažnyčios chore ir atlikti
+      įvairius darbus.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1736–1740 m.</span>
+    <h3>Studijos Karaliaučiaus universitete</h3>
+    <p>
+      Baigęs mokyklą, Donelaitis įstojo į Karaliaučiaus universitetą,
+      kuriame studijavo teologiją. Jis taip pat lankė lietuvių kalbos
+      seminarą, kuriame tobulino gimtosios kalbos žinias.
+      Studijos padėjo jam tapti išsilavinusiu žmogumi ir pasiruošti
+      būsimam kunigo darbui.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1740–1742 m.</span>
+    <h3>Darbas Stalupėnuose</h3>
+    <p>
+      Baigęs universitetą, Donelaitis išvyko dirbti į Stalupėnus.
+      Jis tapo mokyklos kantoriumi – buvo atsakingas už mokinių
+      giedojimą ir bažnytinio choro veiklą. Taip pat dirbo
+      vargonininku. Šis laikotarpis buvo svarbus jo profesinio
+      gyvenimo pradžiai.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1742–1743 m.</span>
+    <h3>Mokyklos rektorius</h3>
+    <p>
+      Vėliau Donelaitis tapo Stalupėnų mokyklos rektoriumi,
+      tai yra jos vadovu. Jis rūpinosi mokyklos veikla ir
+      mokinių ugdymu. Šias pareigas ėjo iki paskyrimo į
+      Tolminkiemio parapiją.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1743 m.</span>
+    <h3>Kunigo tarnystės pradžia Tolminkiemyje</h3>
+    <p>
+      1743 m. Donelaitis buvo įšventintas evangelikų liuteronų
+      kunigu ir pradėjo dirbti Tolminkiemyje. Čia jis gyveno
+      iki pat mirties. Kunigaudamas rūpinosi parapijos žmonėmis,
+      sakė pamokslus lietuvių ir vokiečių kalbomis bei gerai
+      pažinojo vietos valstiečių gyvenimą.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1744 m.</span>
+    <h3>Vedybos</h3>
+    <p>
+      1744 m. spalio 11 d. Donelaitis vedė Oną Reginą Olefant.
+      Jie gyveno Tolminkiemyje. Nors šeimos gyvenimas buvo svarbi
+      jo kasdienybės dalis, didelę laiko dalį užėmė kunigo
+      pareigos ir įvairūs darbai parapijoje.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1747–1764 m.</span>
+    <h3>Statybos ir darbai Tolminkiemyje</h3>
+    <p>
+      Gyvendamas Tolminkiemyje, Donelaitis rūpinosi ne tik
+      parapijiečių dvasiniu gyvenimu, bet ir pačia gyvenviete.
+      Jis prisidėjo prie klebonijos atnaujinimo, bažnyčios
+      perstatymo ir mokyklos atkūrimo. Taip pat pasirūpino
+      klebonų našlių namų statyba. Šie darbai parodo jo
+      atsakingumą ir rūpestį bendruomene.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">Apie 1750–1760 m.</span>
+    <h3>Pasakėčių kūrimas</h3>
+    <p>
+      Donelaitis kūrė eiliuotas pasakėčias, kuriose dažnai
+      vaizduojami gyvūnai ir per jų elgesį atskleidžiamos
+      žmogaus savybės. Jose galima rasti pamokymų apie
+      darbštumą, išmintį, pasipūtimą ir kitus žmogaus
+      charakterio bruožus. Išliko šešios jo pasakėčios.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1757 m.</span>
+    <h3>Rusijos kariuomenės įsiveržimas</h3>
+    <p>
+      Septynerių metų karo metu į šį kraštą įžengė Rusijos
+      kariuomenė. Dėl karo pavojų Donelaitis kurį laiką
+      slėpėsi Romintos girioje, karališkajame medžioklės
+      namelyje. Net ir tokiomis aplinkybėmis jis tęsė
+      kunigo pareigas ir rūpinosi žmonėmis.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">Apie 1765–1775 m.</span>
+    <h3>Poemos „Metai“ kūrimas</h3>
+    <p>
+      Šiuo laikotarpiu Donelaitis kūrė savo svarbiausią
+      literatūros kūrinį – poemą „Metai“. Joje vaizduojamas
+      Mažosios Lietuvos valstiečių gyvenimas per keturis
+      metų laikus. Autorius aprašė gamtą, kasdienius darbus,
+      žmonių santykius ir jų moralines vertybes.
+    </p>
+    <p>
+      Poema išsiskyrė tuo, kad buvo parašyta hegzametru –
+      antikinėje literatūroje naudotu eiliavimo būdu.
+      Donelaitis šią formą pritaikė lietuvių kalbai.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1780 m. vasario 18 d.</span>
+    <h3>Donelaičio mirtis</h3>
+    <p>
+      Kristijonas Donelaitis mirė Tolminkiemyje, sulaukęs
+      66 metų. Jis buvo palaidotas vietos bažnyčioje.
+      Nors pats nesulaukė savo žymiausio kūrinio išleidimo,
+      jo literatūrinis palikimas vėliau tapo itin svarbus
+      lietuvių kultūrai.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1818 m.</span>
+    <h3>Pirmasis „Metų“ leidimas</h3>
+    <p>
+      Praėjus 38 metams po Donelaičio mirties, Liudvikas Rėza
+      parengė ir pirmą kartą išleido poemą „Metai“.
+      Leidime buvo pateiktas ir vertimas į vokiečių kalbą.
+      Būtent šis leidimas padėjo išsaugoti kūrinį ir
+      supažindino su juo platesnę visuomenę.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1824 m.</span>
+    <h3>Pasakėčių paskelbimas</h3>
+    <p>
+      Liudviko Rėzos parengtame leidinyje „Aisopas“ buvo
+      paskelbtos šešios išlikusios Donelaičio pasakėčios.
+      Jos tapo svarbia ankstyvosios lietuvių literatūros
+      dalimi.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1977 m.</span>
+    <h3>Tarptautinis pripažinimas</h3>
+    <p>
+      Donelaičio poema „Metai“ buvo įtraukta į UNESCO
+      leidinį „Europos literatūros šedevrų biblioteka“.
+      Tai parodė, kad kūrinys svarbus ne tik Lietuvai,
+      bet ir platesnei Europos literatūros istorijai.
+    </p>
+  </div>
+
+  <div class="timeline-item">
+    <span class="timeline-date">1979 m.</span>
+    <h3>Memorialinio muziejaus įkūrimas</h3>
+    <p>
+      Tolminkiemyje buvo įkurtas Kristijono Donelaičio
+      memorialinis muziejus. Jis skirtas autoriaus gyvenimui,
+      kūrybai ir istoriniam palikimui atminti.
+    </p>
+  </div>
+
+</div>
+
+
+<h2>Kodėl Donelaitis svarbus lietuvių literatūrai?</h2>
+
+<p>
+Kristijonas Donelaitis laikomas vienu lietuvių grožinės literatūros pradininkų. Jo poema parodė, kad lietuvių kalba galima kurti didelės meninės vertės kūrinius ir vaizduoti paprastų žmonių gyvenimą.
+</p>
+
+<p>
+Jo kūryba padeda suprasti XVIII a. Mažosios Lietuvos valstiečių kasdienybę, papročius ir pasaulėžiūrą. Donelaitis taip pat prisidėjo prie lietuvių kalbos ir kultūros išsaugojimo.
+</p>
+
+<p>
+Nors nuo jo gyvenimo laikų praėjo daugiau nei du šimtai metų, kūrinyje iškeltos vertybės išlieka aktualios. Darbštumas, atsakomybė, pagarba kitiems, dėkingumas ir bendruomeniškumas svarbūs ir šiuolaikiniam žmogui.
+</p>
+
+<p>
+Tolminkiemis, kuriame Donelaitis gyveno ir kūrė, šiandien vadinamas Čistyje Prudy ir yra Kaliningrado srityje.
+</p>
+
 </main>
 
-<footer>Mokyklinis projektas pagal Kristijono Donelaičio poemą „Metai“. Parengė: [vardas, pavardė], [klasė].</footer>
-
+<footer>
+Mokyklinis projektas pagal Kristijono Donelaičio poemą „Metai“.
+Parengė: Edvinas Pocius ir Eimantas Jucius, 3e klasė.
+</footer>
+<script>
+  let clickCount = 0;
+  // Prisirišame prie Donelaičio nuotraukos klasės, kurią ką tik kūrėme
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('autoriaus-foto')) {
+      clickCount++;
+      if (clickCount === 5) {
+        window.open('https://www.youtube.com/watch?v=vH4zvGZ7jCY', '_blank');
+        clickCount = 0; // iš naujo skaičiuojam
+      }
+    }
+  });
+</script>
 </body>
 </html>
